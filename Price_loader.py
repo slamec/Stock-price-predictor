@@ -9,7 +9,7 @@ pd.set_option('display.max_rows', None) #show all the rows "None" is no limit
 start = datetime.datetime(2015, 1, 1)
 end = datetime.datetime(2020, 12, 31)
 
-stock_data = web.DataReader("AAPL", 'yahoo', start, end)
+stock_data = web.DataReader("AAPL", 'yahoo', start, end) #possible to use google etc.
 stock_data.tail()
 
 with open('filename1.csv', 'w') as f:
