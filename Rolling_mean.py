@@ -12,6 +12,8 @@ end = datetime.datetime(2020, 12, 31)
 stock_data = web.DataReader("AAPL", 'yahoo', start, end) #possible to use google etc and other e.g. eurostat
 stock_data.tail()
 
-with open('filename1.csv', 'w') as f:
-    print(stock_data, file=f) #saves to a file
-    
+close_px = stock_data['Adj Close'] #get the close_px
+moving_avarage = close_px.rolling(window=100).mean() #rolling the close_px
+moving_avarage
+
+
