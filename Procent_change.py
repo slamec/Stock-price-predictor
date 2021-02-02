@@ -26,10 +26,9 @@ close_px = stock_data['Adj Close'] #get the close_px
 moving_avarage = close_px.rolling(window=100).mean() #rolling the close_px
 moving_avarage
 
-#plotting using matplotlib
-close_px.plot(label = 'AAPL')
-moving_avarage.plot(label = 'Moving avg')
-plt.legend()
 
+#getting return as a close px in %
+rets = close_px.pct_change()
+rets.plot(label = 'return') #plot and label it as return
 
 
